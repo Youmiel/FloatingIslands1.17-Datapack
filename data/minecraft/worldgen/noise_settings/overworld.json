@@ -1,5 +1,5 @@
 {
-  "aquifers_enabled": true,
+  "aquifers_enabled": false,
   "default_block": {
     "Name": "minecraft:stone"
   },
