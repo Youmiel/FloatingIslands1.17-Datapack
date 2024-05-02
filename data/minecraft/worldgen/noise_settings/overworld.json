@@ -3,7 +3,7 @@
   "noodle_caves_enabled": true,
   "legacy_random_source": false,
   "disable_mob_generation": false,
-  "aquifers_enabled": true,
+  "aquifers_enabled": false,
   "noise_caves_enabled": true,
   "default_fluid": {
     "Name": "minecraft:air"
