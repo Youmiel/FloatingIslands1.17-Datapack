@@ -1,6 +1,10 @@
 {
   "pack": {
-    "pack_format": 15,
+    "pack_format": 16,
+    "supported_formats": {
+      "min_inclusive": 16,
+      "max_inclusive": 26
+    },
     "description": [
       {
         "text": "FloatingIslands",
@@ -11,7 +15,7 @@
         "color": "gold"
       }
     ],
-    "version": "3.2.0",
+    "version": "3.3.0",
     "__comment__": "U_ruby w!"
   }
 }
