@@ -1,4 +1,5 @@
-# FloatingIslands1.18-Datapack
+# FloatingIslands-Datapack
+
 - A minecraft datapack that creates floating islands in overworld and the nether.
 - Terrain noise in `the nether` is similar to `the end`, but sightly changed
   - Nether terrain surface is sightly rougher than `the end`
@@ -14,10 +15,12 @@
     - savanna
     - swamp
     - taiga
+    - basalt_deltas
     - nether_wastes
     - soul_sand_valley
     - **warped_forest**(*heighest density*)
     - end_highlands(*vanilla datapack*)
---------------------------------
-# Usage
-Load it with 1.18 or 1.18.1 Minecraft before world generation, and enjoy.
+
+## Usage
+
+Load it with correct version of Minecraft(Java Edition) before world generation, and enjoy the game `:)`
