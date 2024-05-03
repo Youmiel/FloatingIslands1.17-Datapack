@@ -1,6 +1,6 @@
 {
   "pack": {
-    "pack_format": 12,
+    "pack_format": 15,
     "description": [
       {
         "text": "FloatingIslands",
@@ -11,7 +11,7 @@
         "color": "gold"
       }
     ],
-    "version": "3.1.1",
+    "version": "3.2.0",
     "__comment__": "U_ruby w!"
   }
 }
