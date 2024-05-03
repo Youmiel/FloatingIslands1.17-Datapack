@@ -1,4 +1,5 @@
-# FloatingIslands1.17-Datapack
+# FloatingIslands-Datapack
+
 - A minecraft datapack that creates floating islands in overworld and the nether.
 - Terrain noise in `overworld` and `the nether` is similar to `the end`, but sightly changed
   - Overworld sea level has changed to 32 for better vegetation on overworld islands
@@ -13,10 +14,12 @@
     - savanna
     - swamp
     - taiga
+    - basalt_deltas
     - nether_wastes
     - soul_sand_valley
     - **warped_forest**(*heighest density*)
     - end_highlands(*vanilla datapack*)
---------------------------------
-# Usage
-Load it with 1.17.x Minecraft before world generation, and enjoy.
+
+## Usage
+
+Load it with correct version of Minecraft(Java Edition) before world generation, and enjoy the game `:)`
