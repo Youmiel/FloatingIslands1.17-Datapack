@@ -1,9 +1,9 @@
 {
   "pack": {
-    "pack_format": 41,
+    "pack_format": 48,
     "supported_formats": {
-      "min_inclusive": 37,
-      "max_inclusive": 41
+      "min_inclusive": 45,
+      "max_inclusive": 48
     },
     "description": [
       {
@@ -15,7 +15,7 @@
         "color": "gold"
       }
     ],
-    "version": "3.4.1",
+    "version": "3.5.0",
     "__comment__": "U_ruby w!"
   }
 }
