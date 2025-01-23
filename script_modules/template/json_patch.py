@@ -57,7 +57,7 @@ def process_single(content: ty.Tuple[Path, ty.Dict]) -> ty.Tuple[Path, ty.Dict]:
     returns:
     - (new_path, dict_content): modified content
     '''
-    return {}
+    return content
 
 def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple[Path, ty.Dict]]:
     '''
@@ -70,4 +70,4 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
     returns:
     - list of (new_path, dict_content): modified contents
     '''
-    return []
+    return content
