@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "version":"1.2.0",
+    "pack_format": 6,
+    "description": [
+      {
+        "text": "FloatingIslands",
+        "color": "green"
+      },
+      {
+        "text": "将末地的浮岛地形应用到主世界和下界\nby Youmiel",
+        "color": "gold"
+      }
+    ]
+  }
+}

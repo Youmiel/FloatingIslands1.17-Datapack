@@ -1,0 +1,20 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "exit": [
+          0,
+          70,
+          0
+        ],
+        "exact": false
+      },
+      "type": "minecraft:end_gateway"
+    },
+    "decorator": {
+      "config": {},
+      "type": "minecraft:end_gateway"
+    }
+  },
+  "type": "minecraft:decorated"
+}
