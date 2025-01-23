@@ -27,14 +27,17 @@ def clean_directory(build_dir: ty.Union[str, Path]) -> bool:
     return True
 
 
-def scan_sources(res_manager: VersionResourceManager):
+def scan_sources(res_manager: VersionResourceManager, exclude_file_list: ty.List[str]):
     source_file_list: ty.List[str] = file_util.scan_folder(res_manager.get_current_version_root())
+
     patch_file_list, static_file_list = [], []
-    patch_predicate, chache_predicate = file_util.extension_match('.py'), file_util.part_match('__pycache__')
+    patch_predicate, cache_predicate = file_util.extension_match('.py'), file_util.part_match('__pycache__')
+    exclude_full_path_list = [os.path.join(res_manager.get_current_version_root(), path) for path in exclude_file_list]
+
     for filename in source_file_list:
         if patch_predicate(filename):
             patch_file_list.append(filename)
-        elif not chache_predicate(filename):
+        elif not cache_predicate(filename) and filename not in exclude_full_path_list:
             static_file_list.append(filename)
         else:
             pass

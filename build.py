@@ -25,7 +25,8 @@ def run(
         common_path: str, 
         same_version_keyword: str, 
         version_config: ty.Dict[str, ty.Any],
-        extra_file_list: ty.List[str]
+        extra_file_list: ty.List[str],
+        exclude_file_list: ty.List[str]
     ):
     res_manager = VersionResourceManager(Path(build_path), Path(common_path), same_version_keyword, version_config)
 
@@ -41,7 +42,7 @@ def run(
             continue
 
         print(f'  Scanning {source_version_root} ...')
-        static_file_list, patch_file_list = generator.scan_sources(res_manager)
+        static_file_list, patch_file_list = generator.scan_sources(res_manager, exclude_file_list)
 
         print('  Copying static file...')
         static_destination_list = [os.path.join(build_version_root, os.path.relpath(file, source_version_root)) for file in static_file_list]
@@ -76,4 +77,6 @@ def run(
 
 
 if __name__ == '__main__':
-    run(settings.BUILD_PATH, settings.COMMON_PATH, settings.SAME_VERSION, settings.__VERSION_CONFIG, settings.EXTRA_FILE)
+    run(settings.BUILD_PATH, settings.COMMON_PATH, 
+        settings.SAME_VERSION, settings.__VERSION_CONFIG, 
+        settings.EXTRA_FILE, settings.EXCLUDE_FILE)

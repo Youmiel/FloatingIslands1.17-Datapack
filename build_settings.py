@@ -2,7 +2,11 @@ COMMON_PATH = 'common/'
 BUILD_PATH = 'build/'
 SAME_VERSION = 'MC_0'
 
-EXTRA_FILE = ['README.md', 'LICENSE']
+EXTRA_FILE = ['README.md', 'LICENSE'] 
+# relative to project root
+
+EXCLUDE_FILE = ['spyglass.json'] 
+# relative to version source root
 
 MC_1_16_X = {'path': '1_16_x/', 'name': 'FloatingIslands-Datapack_v{version}_1.16.x', 'version': '1.2.0'}
 MC_1_17_X = {'path': '1_17_x/', 'name': 'FloatingIslands-Datapack_v{version}_1.17.x', 'version': '1.1.0'}
@@ -20,12 +24,9 @@ def __collect_constant() -> dict:
     ret = {}
     global_temp = globals().copy()
     for key in global_temp:
-        if not key.startswith('__'):
+        if key.startswith('MC_'):
             ret[key] = global_temp[key]
-    ret.pop('COMMON_PATH')
-    ret.pop('BUILD_PATH')
-    ret.pop('SAME_VERSION')
-    ret.pop('EXTRA_FILE')
+    # ret.pop(*['COMMON_PATH', 'BUILD_PATH', 'SAME_VERSION', 'EXTRA_FILE', 'EXCLUDE_FILE'])
     return ret
 
 __VERSION_CONFIG = __collect_constant()
