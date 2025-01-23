@@ -28,10 +28,10 @@ def basename_match_regex(name_pattern: re.Pattern) -> ty.Callable[[str], bool]:
         return re.match(name_pattern, path) is not None
     return match_function
 
-
+# not able to be used in scan_folder()
 def part_match(path_part: str) -> ty.Callable[[str], bool]:
     def match_function(path: str) -> bool:
-        return path.find(path_part) > 0
+        return path.find(path_part) >= 0
     return match_function
 
        
