@@ -4,6 +4,8 @@ import sys
 import typing as ty
 from pathlib import Path
 from types import ModuleType
+import zipfile
+import zlib
 
 from script_modules import file_util, io_util
 from script_modules.resource_locator import VersionResourceManager
@@ -90,3 +92,25 @@ def process_patch(source_version_root: Path, patch_strpath: str, res_manager: Ve
         patch_json(relative_patch_path, patch_module, res_manager)
     else:
         print(f'    Unhandled patch {relative_patch_path}')
+
+
+def pack_zipfile(build_path: Path, result_root: Path, config: ty.Dict[str, str], extra_file_list: ty.List[str]):
+    pack_name = config['name'].format(**config)
+    pack_path = os.path.join(build_path, pack_name + '.zip')
+    pack_path_temp = os.path.join(build_path, pack_name + '.zip.tmp')
+    datapack_files = file_util.scan_folder(result_root)
+    try:
+        with zipfile.ZipFile(pack_path_temp, 'w') as pack_zip:
+            for fpath in datapack_files:
+                pack_zip.write(fpath, 
+                                arcname=os.path.relpath(fpath, result_root),
+                                compress_type=zipfile.ZIP_DEFLATED, 
+                                compresslevel=zlib.Z_DEFAULT_COMPRESSION)
+            for extra_file in extra_file_list:
+                pack_zip.write(extra_file,
+                                compress_type=zipfile.ZIP_DEFLATED, 
+                                compresslevel=zlib.Z_DEFAULT_COMPRESSION)
+        os.replace(pack_path_temp, pack_path)
+        # shutil.move(pack_path_temp, pack_path)
+    except OSError as e:
+        print(e, file=sys.stderr)

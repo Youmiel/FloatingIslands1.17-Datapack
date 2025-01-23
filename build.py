@@ -7,11 +7,7 @@
 
 from pathlib import Path
 import os
-import shutil
-import sys
 import typing as ty
-import zipfile
-import zlib
 
 import build_settings as settings
 
@@ -55,25 +51,7 @@ def run(
             generator.process_patch(src_version_root, patch_strpath, res_manager)
             
         print('  Packing...')
-        pack_name = version_config[v_key]['name'].format(**version_config[v_key])
-        pack_path = os.path.join(build_path, pack_name + '.zip')
-        pack_path_temp = os.path.join(build_path, pack_name + '.zip.tmp')
-        datapack_files = file_util.scan_folder(build_version_root)
-        try:
-            with zipfile.ZipFile(pack_path_temp, 'w') as pack_zip:
-                for fpath in datapack_files:
-                    pack_zip.write(fpath, 
-                                   arcname=os.path.relpath(fpath, build_version_root),
-                                   compress_type=zipfile.ZIP_DEFLATED, 
-                                   compresslevel=zlib.Z_DEFAULT_COMPRESSION)
-                for extra_file in extra_file_list:
-                    pack_zip.write(extra_file,
-                                   compress_type=zipfile.ZIP_DEFLATED, 
-                                   compresslevel=zlib.Z_DEFAULT_COMPRESSION)
-            os.replace(pack_path_temp, pack_path)
-            # shutil.move(pack_path_temp, pack_path)
-        except OSError as e:
-            print(e, file=sys.stderr)
+        generator.pack_zipfile(Path(build_path), build_version_root, res_manager.get_current_version_config(), extra_file_list)
 
 
 if __name__ == '__main__':
