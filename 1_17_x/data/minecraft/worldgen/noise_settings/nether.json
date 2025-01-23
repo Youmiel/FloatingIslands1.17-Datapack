@@ -6,14 +6,14 @@
   "min_surface_level": 0,
   "disable_mob_generation": false,
   "aquifers_enabled": false,
-  "default_fluid":  {
+  "default_fluid": {
     "Name": "minecraft:air"
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
   "sea_level": 32,
   "structures": {
-    "structures": {      
+    "structures": {
       "minecraft:pillager_outpost": {
         "spacing": 32,
         "separation": 8,

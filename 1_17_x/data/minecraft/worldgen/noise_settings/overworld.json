@@ -6,7 +6,7 @@
   "min_surface_level": 0,
   "disable_mob_generation": false,
   "aquifers_enabled": false,
-  "default_fluid":  {
+  "default_fluid": {
     "Properties": {
       "level": "0"
     },
@@ -21,7 +21,7 @@
       "spread": 3,
       "count": 128
     },
-    "structures": {      
+    "structures": {
       "minecraft:pillager_outpost": {
         "spacing": 32,
         "separation": 8,
