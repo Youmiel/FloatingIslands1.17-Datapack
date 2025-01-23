@@ -1,0 +1,17 @@
+{
+  "pack": {
+    "pack_format": 8,
+    "description": [
+      {
+        "text": "FloatingIslands",
+        "color": "green"
+      },
+      {
+        "text": "浮岛\nby Youmiel",
+        "color": "gold"
+      }
+    ],
+    "version": "2.0.2",
+    "__comment__": "U_ruby w!"
+  }
+}
